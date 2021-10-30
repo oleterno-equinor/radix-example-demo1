@@ -1,0 +1,31 @@
+version: "3.5"
+
+networks:
+  radix-web-app-simple:
+    name: radix-web-app-simple
+
+services:
+  frontend:
+    build:
+      context: frontend
+    image: radix-web-app-simple-frontend
+    container_name: radix-web-app-simple-frontend_container
+    networks:
+      - radix-web-app-simple
+    ports:
+      - "8000:3000"
+    volumes:
+      - type: bind
+        source: ./frontend
+        target: /images
+  backend:
+    build:
+      context: backend
+    image: radix-web-app-simple-backend
+    container_name: radix-web-app-simple-backend_container
+    networks:
+      - radix-web-app-simple
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /web

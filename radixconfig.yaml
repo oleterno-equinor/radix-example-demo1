@@ -1,0 +1,27 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: ole-markus-simple-app
+spec:
+  environments:
+    - name: prod
+      build:
+        from: master
+  components:
+    - name: frontend
+      src: ./frontend
+      ports:
+       - name: http
+         port: 3000
+      public: true
+      publicPort: http
+    - name: backend
+      src: ./backend
+      ports:
+        - name: http
+          port: 6000
+      public: false
+
+  dnsAppAlias:
+    environment: prod
+    component: frontend
