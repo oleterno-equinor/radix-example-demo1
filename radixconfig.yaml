@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: ole-markus-simple-app
+  name: edc2021-olmt-demo-1
 spec:
   environments:
     - name: prod
