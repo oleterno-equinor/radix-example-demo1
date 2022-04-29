@@ -1,5 +1,9 @@
 FROM nginxinc/nginx-unprivileged:1.20-alpine
 
+ARG TARGET_ENVIRONMENTS
+
+RUN echo "TARGET_ENVIRONMENTS: ${TARGET_ENVIRONMENTS}"
+
 WORKDIR /app
 
 USER root
