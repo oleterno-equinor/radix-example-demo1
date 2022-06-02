@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: edc2021-olmt-demo-1
+  name: olmt-radix-example-demo-1
 spec:
   environments:
     - name: prod
